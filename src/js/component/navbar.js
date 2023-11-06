@@ -9,13 +9,13 @@ export const Navbar = () => {
 			</Link>
 			<div className="ml-auto">
 				<Link to="/demo">
-					<div class="btn-group" role="group">
-						<button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+					<div className="btn-group" role="group">
+						<button type="button" className="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 							Favorites
 						</button>
-						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">Dropdown link</a></li>
-							<li><a class="dropdown-item" href="#">Dropdown link</a></li>
+						<ul className="dropdown-menu">
+							<li><Link className="dropdown-item" to="#">Dropdown link</Link></li>
+							<li><Link className="dropdown-item" to="#">Dropdown link</Link></li>
 						</ul>
 					</div>
 				</Link>
