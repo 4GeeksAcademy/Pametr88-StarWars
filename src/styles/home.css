@@ -1,5 +1,4 @@
-.accordion-header{
-    font-size: large;
-    color: red !important;
-    background-color: brown;
-}
+#title{
+    color: rgb(209, 18, 18) !important;
+    font-size: 40px;
+    }

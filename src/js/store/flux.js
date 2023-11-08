@@ -3,6 +3,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			Character: [
 
+			],
+			Planets: [
+
+			],
+			ProPlanet: [
+
 			]
 		},
 		actions: {
@@ -14,9 +20,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				fetch("https://www.swapi.tech/api/people/")
 					.then(res => res.json())
-					.then(data => setStore({Character:data.results}))
+					.then(data => setStore({ Character: data.results }))
 					.catch(err => console.error(err))
-			}	
+			},
+			loadSomePlanet: () => {
+
+				fetch("https://www.swapi.tech/api/planets/")
+					.then(res => res.json())
+					.then(data => setStore({ Planets: data.results }))
+					.catch(err => console.error(err))
+			},
+			loadPropertyPlanet: () => {
+
+				fetch("https://www.swapi.tech/api/planets/:id/")
+					.then(res => res.json())
+					.then(data => setStore({ ProPlanet: data.result }))
+					.catch(err => console.error(err))
+			}
 		}
 	};
 };
