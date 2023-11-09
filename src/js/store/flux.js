@@ -9,25 +9,28 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			ProPlanet: [
 
-			]
+			],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 			loadSomePeople: () => {
 
-				fetch("https://www.swapi.tech/api/people/")
+				fetch("https://swapi.dev/api/people")
 					.then(res => res.json())
-					.then(data => setStore({ Character: data.results }))
+					.then(data => {
+						const store=getStore()
+						setStore({ ...store, Character: data.results })
+					})
 					.catch(err => console.error(err))
 			},
 			loadSomePlanet: () => {
 
 				fetch("https://www.swapi.tech/api/planets/")
 					.then(res => res.json())
-					.then(data => setStore({ Planets: data.results }))
+					.then(data => {
+						const store=getStore()
+						setStore({ ...store, Planets: data.results })
+					})
 					.catch(err => console.error(err))
 			},
 			loadPropertyPlanet: () => {
@@ -36,7 +39,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(res => res.json())
 					.then(data => setStore({ ProPlanet: data.result }))
 					.catch(err => console.error(err))
-			}
+			}			
 		}
 	};
 };
