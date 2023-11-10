@@ -18,8 +18,8 @@ export const Films = () => {
                         <h5 className="card-title">{item.title}</h5>
                         <p className="card-text">Director: {item.director}</p>
                         <div>
-                            <Link to="#" className="btn btn-outline-dark">Learn more!</Link>
-                            <Link to="#" className="btn btn-outline-warning"><i className="fa-regular fa-heart" style={{ color: "#ffff00" }}></i></Link>
+                            <Link to="#" className="btn btn-outline-dark me-5">Learn more!</Link>
+                            <Link to="#" className="btn btn-outline-warning ms-5"><i className="fa-regular fa-heart" style={{ color: "#ffff00" }}></i></Link>
                         </div>
                     </div>
                 </div>

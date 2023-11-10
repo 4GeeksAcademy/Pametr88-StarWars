@@ -1,3 +1,5 @@
-#navb {
-    background-color: black;
+.navbar {
+    background-color: black !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: bold !important;
 }
