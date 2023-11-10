@@ -3,22 +3,20 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/card.css";
 
-export const Card = () => {
+export const Films = () => {
     const { store, actions } = useContext(Context)
     useEffect(() => {
-        actions.loadSomePeople()
+        actions.loadSomeFilm()
     }, [])
-    console.log(store.Character)
+    console.log(store.Pelis)
     return (
         <div className="card-container">
-            {store.Character.map((item, index) => (
+            {store.Pelis.map((item, index) => (
                 <div key={index} className="card" style={{ width: "18rem" }}>
-                    <img src={`https://starwars-visualguide.com/assets/img/characters/${index + 1 <= 17 ? index + 1 == 17 ? 18 : index + 1 : index + 2}.jpg`} className="card-img-top" alt="..." />
+                    <img src={`https://starwars-visualguide.com/assets/img/films/${index + 1 <= 17 ? index + 1 == 17 ? 18 : index + 1 : index + 2}.jpg`} className="card-img-top" alt="..." />
                     <div className="card-body">
-                        <h5 className="card-title">{item.name}</h5>
-                        <p className="card-text">Gender: {item.gender}</p>
-                        <p className="card-text">Height: {item.height}</p>
-                        <p className="card-text">Hair Color: {item.hair_color}</p>
+                        <h5 className="card-title">{item.title}</h5>
+                        <p className="card-text">Director: {item.director}</p>
                         <div>
                             <Link to="#" className="btn btn-outline-dark">Learn more!</Link>
                             <Link to="#" className="btn btn-outline-warning"><i className="fa-regular fa-heart" style={{ color: "#ffff00" }}></i></Link>

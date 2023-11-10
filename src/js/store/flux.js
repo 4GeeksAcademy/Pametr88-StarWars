@@ -7,6 +7,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 			Planets: [
 
 			],
+			Pelis: [
+
+			],
 			ProPlanet: [
 
 			],
@@ -30,6 +33,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						const store=getStore()
 						setStore({ ...store, Planets: data.results })
+					})
+					.catch(err => console.error(err))
+			},
+			loadSomeFilm: () => {
+
+				fetch("https://swapi.dev/api/films")
+					.then(res => res.json())
+					.then(data => {
+						const store=getStore()
+						setStore({ ...store, Pelis: data.results })
 					})
 					.catch(err => console.error(err))
 			},
