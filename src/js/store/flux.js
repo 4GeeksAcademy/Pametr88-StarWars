@@ -12,7 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			],
 			Especies:[
 
-			]
+			],
+			OneCharacter: {
+
+			},
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -23,6 +26,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => {
 						const store=getStore()
 						setStore({ ...store, Character: data.results })
+					})
+					.catch(err => console.error(err))
+			},
+			loadOnePeople: (id) => {
+
+				fetch (`https://www.swapi.tech/api/people/${id}`)
+					.then(res => res.json())
+					.then(data => {
+						const store=getStore()
+						setStore({ ...store, OneCharacter: data.result })
 					})
 					.catch(err => console.error(err))
 			},
